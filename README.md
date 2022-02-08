@@ -10,10 +10,12 @@ See also:
 ## prerequisites
 
 + docker : install with `Chocolatey` command.
++ vscode editor is recommended.
 
 ## How to run
 
-```ps1
+```ps
+docker build -t test .
 docker run -it -v ${pwd}:/app --rm /bin/bash
 ```
 
