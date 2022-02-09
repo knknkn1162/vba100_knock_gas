@@ -21,4 +21,5 @@ delete-%: $(SRC_DIR)/%
 export-%: $(SRC_DIR)/%
 	cp $^/.clasp.json ./
 	clasp push
-	clasp open
+	cat .clasp.json | jq .scriptId | xargs -I{} echo "https://script.google.com/d/{}/edit"
+	cat .clasp.json | jq .parentId[0] | xargs -I{} echo "https://docs.google.com/spreadsheets/d/{}/edit"
