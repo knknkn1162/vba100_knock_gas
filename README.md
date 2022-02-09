@@ -37,7 +37,7 @@ make create-${MACRO}
 # 4. write typescript code
 # 5. export (push)
 make export-${MACRO}
-# 6. press `run` button (on the web)
+# 6. press `Ctrl-R` to run script (on the web)
 ```
 
 # references
