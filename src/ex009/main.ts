@@ -2,7 +2,7 @@ import Sheet = GoogleAppsScript.Spreadsheet.Sheet;
 import Book = GoogleAppsScript.Spreadsheet.Spreadsheet;
 
 function applyFilter(sht: Sheet, callback: () => void): void {
-    try { sht.getFilter().remove(); } catch {}
+    sht?.getFilter()?.remove();
     const rule = SpreadsheetApp.newFilterCriteria()
         .whenTextEqualTo("合格")
         .build();
