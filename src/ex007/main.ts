@@ -3,9 +3,7 @@ function main(): void {
     const rng = sht.getDataRange();
     const mat = rng.getValues();
     sht.getRange("B:B").setNumberFormat("MMdd");
-    const ret = mat
-        // exclude header
-        .filter((_, idx) => idx !== 0)
+    const ret = mat.slice(1)
         .map(val => String(val[0]).replaceAll(/ /g, "\/"))
         .map(val => val.replace("元年", "1年"))
         // year expression in 2 charas(e.g) yy/mm/dd) is ambiguous
