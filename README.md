@@ -7,6 +7,12 @@ See also:
 + https://github.com/knknkn1162/vba100_knock (VBA code on xlsm)
 + https://github.com/knknkn1162/vba100_knock_ps (PowerShell)
 
+## note
+
++ we skip several exercises because of the following difficuties:
+
++ ex018: `#REF` namedranges cannot be retrieved by `getNamedRanges()`
+
 ## prerequisites
 
 + docker : install with `Chocolatey` command.
