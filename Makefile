@@ -24,7 +24,8 @@ env-%: $(SRC_DIR)/%
 push-%: $(SRC_DIR)/% env-%
 	clasp push
 
-export-%: $(SRC_DIR)/% env-% push-% url-%
+export-%: push-% url-%
+	:
 
 url-%: $(SRC_DIR)/% env-%
 	cat .clasp.json | jq .scriptId | xargs -I{} echo "https://script.google.com/d/{}/edit"
