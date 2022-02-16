@@ -21,7 +21,7 @@ function main(): void {
     const cdt = new Date(); cdt.setDate(cdt.getDate()-30);
     const pdtstr = Utilities.formatDate(cdt, "JST", "yyyyMMddhhmmss");
     const root = DriveApp.getFoldersByName("spreadsheet").next();
-    const dir = getBackupFolder(`BACKUP_${book.getName()}`, root);
+    const dir = getBackupFolder(`${book.getName()}_BACKUP`, root);
     const fname = `${book.getName()}_${pdtstr}`;
     Logger.log(`${fname} or before will be trashed.`);
     const removeItem = (ditem: DriveItem): void => {
