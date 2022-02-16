@@ -18,8 +18,14 @@ import-%: $(SRC_DIR)/%
 delete-%: $(SRC_DIR)/%
 	rm -r $^
 
-export-%: $(SRC_DIR)/%
+env-%: $(SRC_DIR)/%
 	cp $^/.clasp.json ./
+
+push-%: $(SRC_DIR)/% env-%
 	clasp push
+
+export-%: $(SRC_DIR)/% env-% push-% url-%
+
+url-%: $(SRC_DIR)/% env-%
 	cat .clasp.json | jq .scriptId | xargs -I{} echo "https://script.google.com/d/{}/edit"
 	cat .clasp.json | jq .parentId[0] | xargs -I{} echo "https://docs.google.com/spreadsheets/d/{}/edit"
