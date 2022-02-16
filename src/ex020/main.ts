@@ -19,15 +19,15 @@ function createBackupFolder(str: string, parent: Folder): Folder {
     switch(arr.length) {
         case 2:
             console.error(`${str} folders has at least two`);
-            break;
+            throw new Error("CreateFolderException");
         case 1:
-            Logger.log(`exist folder: ${str}; do nothing`)
+            Logger.log(`already exists folder: ${str}; use this.`)
             if(isFolder(arr[0])) return arr[0];
         case 0:
             return root.createFolder(str)
         default:
-            console.error("unkown error");
-            break;
+            console.error("unknown error");
+            throw new Error("UnknownException");
     }
     return;
 }
