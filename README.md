@@ -12,6 +12,7 @@ See also:
 + we skip several exercises because of the following difficuties:
 
 + ex018: `#REF` namedranges cannot be retrieved by `getNamedRanges()`
++ ex019: Shape API doesn't exist.
 
 ## prerequisites
 
